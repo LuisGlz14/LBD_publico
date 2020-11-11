@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Publico"
+    }
+  },
+  "defaultProject": "Publico",
+  "cli": {
+    "analytics": "94f4432a-e258-4cba-96ab-bd704d3ee330"
+  }
 }
