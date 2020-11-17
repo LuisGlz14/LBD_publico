@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <h1>Acerca de:</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h3>Misión:</h3>
+            <p>Con este pequeño sistema podemos mostrar la información pública para que la gente conozca
+                como se está consumiendo la energía eléctrica en México. Así podrán tomar conciencia y hacer algo al
+                respecto.
+                <br>
+                Otra misión muy importante de esta página es la de poder completar la parte práctica de nuestro proyecto
+                final
+                de Lenguaje de Bases de Datos.
+            </p>
+        </div>
+        <div class="col-12 col-md-3 text-center p-1">
+            <img src="assets/img/informacion.jpg" alt="Informacion" class="img img-fluid rounded" style="max-width: 300px;">
+        </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <div *ngFor="let i of info" class="col-12 col-md-6 col-lg-3">
+            <div class="card mx-auto my-2" style="max-width: 18rem;">
+                <img class="card-img-top" [src]="i.imagen" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.titulo}}</h5>
+                    <p class="card-text">{{i.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
