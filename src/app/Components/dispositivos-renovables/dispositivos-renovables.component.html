@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col text-center">
+            <h3>Dispositivos renovables por colonia:</h3>
+        </div>
+    </div>
+    <div class="row" *ngIf="!loading; else cargando">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">CP</th>
+                    <th scope="col">Colonia</th>
+                    <th scope="col">Promedio Dispositivos Renovables</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of info">
+                    <th scope="row">{{i.cp}}</th>
+                    <td>{{i.nombre}}</td>
+                    <td>{{i.promedio}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Spinner -->
+    <ng-template #cargando>
+        <app-spinner></app-spinner>
+    </ng-template>
+</div>

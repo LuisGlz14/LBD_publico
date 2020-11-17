@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col text-center">
+            <h3>Información de cada colonia:</h3>
+        </div>
+    </div>
+    <ng-container *ngIf="!loading; else cargando">
+        <div class="row">
+            <div class="col-md-8 col-12 form-group">
+                <label for="colonia">Introduzca el código postal de la colonia:</label>
+                <input type="number" class="form-control" id="CPcolonia" placeholder="Código Postal" #CPcolonia>
+                <small class="form-text text-muted">Asegúrate que el CP exista, si no se muestra nada es porque aún no esta
+                    registrado en la base de datos.</small>
+            </div>
+            <div class="col-md-4 col-12 text-center my-auto">
+                <button class="btn btn-primary" (click)="buscar(CPcolonia.value)">Aceptar</button>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">CP</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Lámparas públicas</th>
+                        <th scope="col">No. de viviendas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of info">
+                        <th scope="row">{{i.cp}}</th>
+                        <td>{{i.nombre}}</td>
+                        <td>{{i.estado}}</td>
+                        <td>{{i.lamparas}}</td>
+                        <td>{{i.viviendas}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+
+    <!-- Spinner -->
+    <ng-template #cargando>
+        <app-spinner></app-spinner>
+    </ng-template>
+</div>
